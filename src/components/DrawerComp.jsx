@@ -19,9 +19,11 @@ const DrawerComp = ({ headerItem }) => {
         onClose={() => {
           setOpenDrawer(false);
         }}
+        anchor="top"
         PaperProps={{
           sx: {
             width: "100%", // Make Drawer full-width on mobile
+            height: "55%",
             // bgcolor: "black",
             display: "flex",
             justifyContent: "center",
