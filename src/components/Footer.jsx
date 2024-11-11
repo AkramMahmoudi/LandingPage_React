@@ -1,5 +1,12 @@
 import React, { useContext } from "react";
-import { Box, Grid, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Button,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { StyleTypoContext } from "./app";
 
 const links = [
@@ -18,27 +25,40 @@ const SocialLinks = [
 const Footer = () => {
   const Style = useContext(StyleTypoContext);
 
+  const theme = useTheme();
+  // console.log(theme);
+  const isMobilefooter = useMediaQuery(theme.breakpoints.down("md"));
+  console.log(isMobilefooter);
+
   return (
     <Box
       component="footer"
       sx={{
-        position: "relative", // Fixes the footer to the screen
-        top: "11vh", // Positions it at the bottom
+        // Fixes the footer to the screen
+        position: isMobilefooter ? "relative" : "fixed",
+        bottom: 0,
         left: 0, // Stretches to the left edge
-        // width: "auto",
-        height: "25%",
+        width: "100%", // Full width
+        height: isMobilefooter ? "100%" : "25%", // Dynamic height based on screen size
         backgroundColor: "black",
         color: "white",
-        // pb: 1,
         mt: 1,
-        textAlign: { xs: "center", sm: "left" }, // Align center on extra-small screens, left on small and larger
+        padding: isMobilefooter ? "10px" : "20px", // Padding based on screen size
+        textAlign: "center", // Center text on mobile screens
+        display: "flex", // Flexbox for vertical centering on mobile
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        // bgcolor: "red",
       }}
     >
       <Grid
         container
         spacing={3}
         sx={{
-          position: "relative", // Use relative positioning to adjust within the flow
+          display: "flex",
+          flexDirection: isMobilefooter ? "column" : "row", // Stack items vertically on mobile
+          alignItems: "center",
         }}
       >
         <Grid
@@ -46,9 +66,8 @@ const Footer = () => {
           xs={12}
           sm={4}
           sx={{
-            position: "relative", // Use relative positioning to adjust within the flow
-            left: { xs: 10, sm: 20 }, // Adjust left position based on screen size
-            top: 0,
+            position: "relative", // Adjust within the flow
+            textAlign: isMobilefooter ? "center" : "left", // Center text on mobile
           }}
         >
           <Typography variant="h6" sx={Style}>
@@ -62,7 +81,6 @@ const Footer = () => {
             sx={{
               fontFamily: "Poppins, sans-serif",
               display: "block",
-              position: "relative",
               mt: 8,
             }}
           >
@@ -75,8 +93,7 @@ const Footer = () => {
           sm={4}
           sx={{
             position: "relative",
-            left: { xs: 15, sm: 30 }, // Adjust left position differently for this item
-            top: 0, // Slightly different top offset
+            textAlign: isMobilefooter ? "center" : "left", // Center text on mobile
           }}
         >
           <Typography variant="h6" sx={Style}>
@@ -108,8 +125,7 @@ const Footer = () => {
           sm={4}
           sx={{
             position: "relative",
-            left: { xs: 0, sm: 0 }, // Different offset for variety
-            top: 0,
+            textAlign: isMobilefooter ? "center" : "left", // Center text on mobile
           }}
         >
           <Typography variant="h6" sx={Style}>

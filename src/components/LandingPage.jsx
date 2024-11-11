@@ -12,25 +12,25 @@ const ProfileCard1 = [
     name: "John Doe",
     bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
     avatarUrl: "./7.jpg",
-    rating: { rating },
+    rating: rating,
   },
   {
     name: "John Doe",
     bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
     avatarUrl: "./5.jpg", // Example image URL
-    rating: { rating },
+    rating: rating,
   },
   {
     name: "John Doe",
     bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
     avatarUrl: "./8.jpg", // Example image URL
-    rating: { rating },
+    rating: rating,
   },
   {
     name: "John Doe",
     bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
-    avatarUrl: "./62.jpg", // Example image URL
-    rating: { rating },
+    avatarUrl: "./62.jpg",
+    rating: rating,
   },
 ];
 
