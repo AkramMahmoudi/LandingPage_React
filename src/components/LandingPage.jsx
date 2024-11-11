@@ -2,7 +2,7 @@ import React from "react";
 import ProfileCard from "./ProfileCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Header from "./Header";
+import Header1 from "./Header1";
 import Footer from "./Footer";
 
 const responsive = {
@@ -34,7 +34,7 @@ function LandingPage() {
 
   return (
     <div>
-      <Header></Header>
+      <Header1></Header1>
 
       <Carousel
         responsive={responsive}
