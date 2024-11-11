@@ -5,6 +5,34 @@ import "react-multi-carousel/lib/styles.css";
 import Header1 from "./Header1";
 import Footer from "./Footer";
 
+const rating = 4;
+const ProfileCard1 = [
+  {
+    name: "John Doe",
+    bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
+    avatarUrl: "./7.jpg",
+    rating: { rating },
+  },
+  {
+    name: "John Doe",
+    bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
+    avatarUrl: "./5.jpg", // Example image URL
+    rating: { rating },
+  },
+  {
+    name: "John Doe",
+    bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
+    avatarUrl: "./8.jpg", // Example image URL
+    rating: { rating },
+  },
+  {
+    name: "John Doe",
+    bio: "A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge.",
+    avatarUrl: "./62.jpg", // Example image URL
+    rating: { rating },
+  },
+];
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -12,12 +40,12 @@ const responsive = {
     items: 5,
   },
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 1070 },
     items: 3,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    breakpoint: { max: 1070, min: 464 },
+    items: 1,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -27,7 +55,7 @@ const responsive = {
 
 function LandingPage() {
   // const [rating, setRating] = React.useState(4); // Initial rating
-  const rating = 4;
+
   // const handleRatingChange = (newRating) => {
   //   setRating(newRating);
   // };
@@ -41,34 +69,17 @@ function LandingPage() {
         showDots={true}
         containerClass="carousel-container"
       >
-        <ProfileCard
-          name="John Doe"
-          bio="A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge."
-          avatarUrl="./7.jpg" // Example image URL
-          rating={rating}
-          // onRatingChange={null}
-        />
-        <ProfileCard
-          name="John Doe"
-          bio="A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge."
-          avatarUrl="./5.jpg" // Example image URL
-          rating={rating}
-          // onRatingChange={}
-        />
-        <ProfileCard
-          name="John Doe"
-          bio="A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge."
-          avatarUrl="./8.jpg" // Example image URL
-          rating={rating}
-          // onRatingChange={}
-        />
-        <ProfileCard
-          name="John Doe"
-          bio="A passionate developer and tech enthusiast. Loves to explore new technologies and share knowledge."
-          avatarUrl="./62.jpg" // Example image URL
-          rating={rating}
-          // onRatingChange={}
-        />
+        {ProfileCard1.map((e, index) => {
+          return (
+            <ProfileCard
+              name={e.name}
+              bio={e.bio}
+              avatarUrl={e.avatarUrl}
+              rating={e.rating}
+              // onRatingChange={}
+            />
+          );
+        })}
       </Carousel>
       <Footer></Footer>
     </div>
