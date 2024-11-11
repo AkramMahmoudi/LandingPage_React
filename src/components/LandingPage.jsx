@@ -4,6 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Header1 from "./Header1";
 import Footer from "./Footer";
+import { v4 as uuidv4 } from "uuid";
 
 const rating = 4;
 const ProfileCard1 = [
@@ -72,6 +73,7 @@ function LandingPage() {
         {ProfileCard1.map((e, index) => {
           return (
             <ProfileCard
+              key={uuidv4}
               name={e.name}
               bio={e.bio}
               avatarUrl={e.avatarUrl}

@@ -19,13 +19,51 @@ const DrawerComp = ({ headerItem }) => {
         onClose={() => {
           setOpenDrawer(false);
         }}
+        PaperProps={{
+          sx: {
+            width: "100%", // Make Drawer full-width on mobile
+            // bgcolor: "black",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            // Set Drawer background color to black
+          },
+        }}
       >
-        <List>
+        <List
+          sx={{
+            // bgcolor: "green",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           {headerItem.map((e, index) => {
             return (
-              <ListItemButton key={uuidv4()}>
-                <ListItemIcon>
-                  <ListItemText>{e}</ListItemText>
+              <ListItemButton
+                key={uuidv4()}
+                onClick={() => {
+                  setOpenDrawer(false);
+                }}
+                sx={
+                  {
+                    // Set background color of ListItemButton
+                    //   bgcolor: "red",
+                  }
+                }
+              >
+                <ListItemIcon
+                // sx={{ bgcolor: "orange" }}
+                >
+                  <ListItemText
+                    sx={{
+                      color: "black",
+                      textAlign: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    {e}
+                  </ListItemText>
                 </ListItemIcon>
               </ListItemButton>
             );
