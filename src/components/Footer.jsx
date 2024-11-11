@@ -26,30 +26,24 @@ const Footer = () => {
   const Style = useContext(StyleTypoContext);
 
   const theme = useTheme();
-  // console.log(theme);
   const isMobilefooter = useMediaQuery(theme.breakpoints.down("md"));
-  console.log(isMobilefooter);
 
   return (
     <Box
       component="footer"
       sx={{
-        // Fixes the footer to the screen
         position: isMobilefooter ? "relative" : "fixed",
         bottom: 0,
-        left: 0, // Stretches to the left edge
-        width: "100%", // Full width
-        height: isMobilefooter ? "100%" : "25%", // Dynamic height based on screen size
+        left: 0,
+        width: "100%",
         backgroundColor: "black",
         color: "white",
-        mt: 1,
-        padding: isMobilefooter ? "10px" : "20px", // Padding based on screen size
-        textAlign: "center", // Center text on mobile screens
-        display: "flex", // Flexbox for vertical centering on mobile
+        padding: isMobilefooter ? "10px" : "20px",
+        textAlign: "center",
+        display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        // bgcolor: "red",
       }}
     >
       <Grid
@@ -57,8 +51,10 @@ const Footer = () => {
         spacing={3}
         sx={{
           display: "flex",
-          flexDirection: isMobilefooter ? "column" : "row", // Stack items vertically on mobile
+          flexDirection: isMobilefooter ? "column" : "row",
           alignItems: "center",
+          justifyContent: "center",
+          width: "100%", // Ensures it takes up full width
         }}
       >
         <Grid
@@ -66,8 +62,7 @@ const Footer = () => {
           xs={12}
           sm={4}
           sx={{
-            position: "relative", // Adjust within the flow
-            textAlign: isMobilefooter ? "center" : "left", // Center text on mobile
+            textAlign: isMobilefooter ? "center" : "left",
           }}
         >
           <Typography variant="h6" sx={Style}>
@@ -78,22 +73,21 @@ const Footer = () => {
           </Typography>
           <Typography
             variant="caption"
-            sx={{
-              fontFamily: "Poppins, sans-serif",
-              display: "block",
-              mt: 8,
-            }}
+            sx={{ fontFamily: "Poppins, sans-serif", display: "block", mt: 8 }}
           >
             © {new Date().getFullYear()} Express Tech. All rights reserved.
           </Typography>
         </Grid>
+
         <Grid
           item
           xs={12}
           sm={4}
           sx={{
-            position: "relative",
-            textAlign: isMobilefooter ? "center" : "left", // Center text on mobile
+            textAlign: isMobilefooter ? "center" : "left", // Ensure consistent text alignment
+            bgcolor: "transparent", // Remove the red background (if not needed)
+            padding: theme.spacing(2),
+            mt: 1,
           }}
         >
           <Typography variant="h6" sx={Style}>
@@ -105,13 +99,13 @@ const Footer = () => {
               href={link.href}
               sx={{
                 color: "white",
-                textTransform: "none", // Disable uppercase transformation
+                textTransform: "none",
                 fontFamily: "Poppins, sans-serif",
                 p: 0,
                 mb: 1,
                 display: "block",
                 "&:hover": {
-                  color: "green", // Change color on hover
+                  color: "green",
                 },
               }}
             >
@@ -119,13 +113,14 @@ const Footer = () => {
             </Button>
           ))}
         </Grid>
+
         <Grid
           item
           xs={12}
           sm={4}
           sx={{
-            position: "relative",
-            textAlign: isMobilefooter ? "center" : "left", // Center text on mobile
+            textAlign: isMobilefooter ? "center" : "left",
+            bgcolor: "transparent",
           }}
         >
           <Typography variant="h6" sx={Style}>
@@ -137,13 +132,13 @@ const Footer = () => {
               href={link.href}
               sx={{
                 color: "white",
-                textTransform: "none", // Disable uppercase transformation
+                textTransform: "none",
                 fontFamily: "Poppins, sans-serif",
                 p: 0,
                 mb: 1,
                 display: "block",
                 "&:hover": {
-                  color: "green", // Change color on hover
+                  color: "green",
                 },
               }}
             >

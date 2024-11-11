@@ -3,6 +3,7 @@ import ProfileCard from "./ProfileCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Header1 from "./Header1";
+// import Footer from "./Footer";
 import Footer from "./Footer";
 import { v4 as uuidv4 } from "uuid";
 
