@@ -36,14 +36,15 @@ const Footer = () => {
         bottom: 0,
         left: 0,
         width: "100%",
-        backgroundColor: "black",
+        mt: "150px",
         color: "white",
         padding: isMobilefooter ? "10px" : "20px",
         textAlign: "center",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: isMobilefooter ? "column" : "row",
         justifyContent: "center",
         alignItems: "center",
+        bgcolor: "black",
       }}
     >
       <Grid
@@ -52,7 +53,7 @@ const Footer = () => {
         sx={{
           display: "flex",
           flexDirection: isMobilefooter ? "column" : "row",
-          alignItems: "center",
+          alignContent: "center",
           justifyContent: "center",
           width: "100%", // Ensures it takes up full width
         }}
@@ -63,6 +64,7 @@ const Footer = () => {
           sm={4}
           sx={{
             textAlign: isMobilefooter ? "center" : "left",
+            bgcolor: "transparent",
           }}
         >
           <Typography variant="h6" sx={Style}>
@@ -86,8 +88,6 @@ const Footer = () => {
           sx={{
             textAlign: isMobilefooter ? "center" : "left", // Ensure consistent text alignment
             bgcolor: "transparent", // Remove the red background (if not needed)
-            padding: theme.spacing(2),
-            mt: 1,
           }}
         >
           <Typography variant="h6" sx={Style}>
@@ -101,9 +101,7 @@ const Footer = () => {
                 color: "white",
                 textTransform: "none",
                 fontFamily: "Poppins, sans-serif",
-                p: 0,
-                mb: 1,
-                display: "block",
+
                 "&:hover": {
                   color: "green",
                 },
@@ -134,9 +132,7 @@ const Footer = () => {
                 color: "white",
                 textTransform: "none",
                 fontFamily: "Poppins, sans-serif",
-                p: 0,
-                mb: 1,
-                display: "block",
+
                 "&:hover": {
                   color: "green",
                 },
